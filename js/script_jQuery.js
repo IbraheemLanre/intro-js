@@ -252,38 +252,28 @@
     return $('[name="password_confirm"]').val();
   }
 
+  /**
+   * Carousel code begins here
+   **/
+
   var sliderEl = document.createElement("section");
   sliderEl.classList.add("lazy", "slider");
   sliderEl.setAttribute("data-sizes", "50vw");
   document.body.appendChild(sliderEl);
 
-  var firstSlide = document.createElement("div");
-  var firstSlideImg = document.createElement("img");
-  firstSlideImg.setAttribute(
-    "data-lazy",
-    "http://placehold.it/350x300?text=1-350w"
-  );
-  firstSlideImg.setAttribute(
-    "data-srcset",
-    "http://placehold.it/650x300?text=1-650w 650w"
-  );
-  firstSlideImg.setAttribute("data-sizes", "100vw");
-  firstSlide.appendChild(firstSlideImg);
+  const addSlide = (imgUrl) => {
+    var firstSlide = document.createElement("div");
+    var firstSlideImg = document.createElement("img");
+    firstSlideImg.setAttribute("data-lazy", imgUrl);
+    firstSlideImg.setAttribute("data-srcset", imgUrl);
+    firstSlideImg.setAttribute("data-sizes", "100vw");
+    firstSlide.appendChild(firstSlideImg);
 
-  sliderEl.appendChild(firstSlide);
+    sliderEl.appendChild(firstSlide);
+  };
 
-  var secondSlide = document.createElement("div");
-  var secondSlideImg = document.createElement("img");
-  secondSlideImg.setAttribute(
-    "data-lazy",
-    "http://placehold.it/350x300?text=1-350w"
-  );
-  secondSlideImg.setAttribute(
-    "data-srcset",
-    "http://placehold.it/650x300?text=1-650w 650w"
-  );
-  secondSlideImg.setAttribute("data-sizes", "100vw");
-  secondSlide.appendChild(secondSlideImg);
-
-  sliderEl.appendChild(secondSlide);
+  var imgUrl =
+    "//www.partioaitta.fi/bo-assets/binaryImages/96/klubitarjoukset-syyskuu-1500x450-35796.jpg?v=a2f7e6b30e35dcebdce0ae0d0c278e93";
+  addSlide(imgUrl);
+  addSlide();
 })(window.jQuery);
