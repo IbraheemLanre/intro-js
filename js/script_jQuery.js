@@ -276,5 +276,21 @@
     "//www.partioaitta.fi/bo-assets/binaryImages/96/klubitarjoukset-syyskuu-1500x450-35796.jpg?v=a2f7e6b30e35dcebdce0ae0d0c278e93";
 
   addSlide(imgUrl);
+  addSlide(imgUrl);
+  addSlide(imgUrl);
+  addSlide(imgUrl);
+  addSlide(imgUrl);
+  addSlide(imgUrl);
   addSlide();
+
+  $(document).ready(function () {
+    $(".lazy").slick({
+      lazyLoad: "ondemand", // ondemand progressive anticipated
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 100,
+      arrow: true,
+      dots: true,
+    });
+  });
 })(window.jQuery);
