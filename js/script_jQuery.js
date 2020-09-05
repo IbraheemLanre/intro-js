@@ -261,7 +261,7 @@
   sliderEl.setAttribute("data-sizes", "50vw");
   document.body.appendChild(sliderEl);
 
-  const addSlide = (imgUrl) => {
+  const addSlide = (imgUrl = "http://placehold.it/650x300?text=2-650w") => {
     var slide = document.createElement("div");
     var slideImg = document.createElement("img");
     slideImg.setAttribute("data-lazy", imgUrl);
