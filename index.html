@@ -17,40 +17,52 @@
 
         $("#hide").click(function () {
           // TODO: hide theDiv element
-          $("#theDiv").hide(4000, basic);
-          $("#theDiv2").hide(2000, run);
+          $("#theDiv").hide(4000);
+          $("#theDiv2").hide(2000, basic);
         });
 
         $("#toggle").click(function () {
           // TODO: toggle hide/show theDiv Element
           $("#theDiv").fadeToggle(3000);
-          $("#theDiv2").fadeToggle(5000);
+          $("#theDiv2").fadeToggle();
         });
 
         $("#fadein").click(function () {
-          $("#theDiv").fadeIn(2000, oncomplete); // 10 seconds in miliseconds
+          $("#theDiv").fadeIn(10000, oncomplete); // 10 seconds in miliseconds
           $("#theDiv2").fadeIn();
         });
 
         $("#fadeout").click(function () {
-          $("#theDiv").fadeOut(2000, oncomplete); // 10 seconds in miliseconds
+          $("#theDiv").fadeOut(10000, oncomplete); // 10 seconds in miliseconds
           $("#theDiv2").fadeOut();
         });
 
         $("#fadeto3").click(function () {
           // TODO: fade theDiv to 30% opactity in 2 seconds
+          $("#theDiv").animate(
+            {
+              opacity: "0.3",
+            },
+            2000
+          );
         });
 
         $("#fadeup").click(function () {
           // TODO: fade theDiv element to 100% in 5 seconds
+          $("#theDiv").animate({ opacity: "1" }, 5000);
+          $("#theDiv2").animate({ opacity: "1" }, 5000);
         });
 
         $("#slideup").click(function () {
           // TODO: slide the element up
+          $("#theDiv").slideUp();
+          $("#theDiv2").slideUp();
         });
 
         $("#slidedown").click(function () {
           // TODO: fade the element down
+          $("#theDiv").slideDown();
+          $("#theDiv2").slideDown();
         });
 
         function clickPulsateButton() {
@@ -67,6 +79,7 @@
         $("#all").click(function () {
           // TODO: animate element to the right, and increase font size to 200
           // call oncomplete function when animation is completed
+          $("#theDiv").animate({ fontSize: "200px" }, oncomplete);
         });
 
         $("#all").click(moveRight);
@@ -82,6 +95,7 @@
           5000,
           function () {
             // Animation complete.
+            oncomplete: "true";
           }
         );
       }
