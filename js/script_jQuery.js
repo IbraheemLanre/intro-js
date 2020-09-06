@@ -256,20 +256,21 @@
    * Carousel code begins here
    **/
 
-  var sliderEl = document.createElement("section");
-  sliderEl.classList.add("lazy", "slider");
-  sliderEl.setAttribute("data-sizes", "50vw");
-  document.body.appendChild(sliderEl);
+  var sliderEl = $("<section/>")
+    .addClass("lazy slider")
+    .attr("data-sizes", "50vw");
 
-  const addSlide = (imgUrl = "http://placehold.it/650x300?text=2-650w") => {
-    var slide = document.createElement("div");
-    var slideImg = document.createElement("img");
-    slideImg.setAttribute("data-lazy", imgUrl);
-    slideImg.setAttribute("data-srcset", imgUrl);
-    slideImg.setAttribute("data-sizes", "100vw");
-    slide.appendChild(slideImg);
+  sliderEl.appendTo("body");
 
-    sliderEl.appendChild(slide);
+  const addSlide = (imgUrl = "//placehold.it/650x300?text=2-650w") => {
+    var slide = $("<div/>");
+    var slideImg = $("<img/>")
+      .attr("data-lazy", imgUrl)
+      .attr("data-srcset", imgUrl)
+      .attr("data-sizes", "100vw");
+    slideImg.appendTo(slide);
+
+    slide.appendTo(sliderEl);
   };
 
   var imgUrl =
