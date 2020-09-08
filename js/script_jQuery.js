@@ -9,12 +9,11 @@
   $userInput.appendTo("body");
   $btn.appendTo("body");
 
-  $(".btn").on("click", function () {
+  $btn.on("click", function () {
     var $cityName = $('[name="userinput"]').val();
     $("body").text($cityName);
     $.ajax({
-      url:
-        "http://api.openweathermap.org/data/2.5/weather?q=$cityName&units=metric&appid=5e1f33369d4f5b9a96ef79c0e12dc9ea",
+      url: `http://api.openweathermap.org/data/2.5/weather?q=${$cityName}&units=metric&appid=5e1f33369d4f5b9a96ef79c0e12dc9ea`,
     }).done(function (resp) {
       var res =
         resp.name +
