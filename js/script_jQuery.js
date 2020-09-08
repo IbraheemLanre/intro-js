@@ -1,4 +1,32 @@
 (function ($) {
+  // Task 2
+  $("<h3/>").text("Enter your city name below").appendTo("body");
+  var $userInput = $("<Input/>")
+    .attr("type", "text")
+    .attr("id", "user-input")
+    .attr("name", "userinput");
+  var $btn = $("<button/>").text("Submit").addClass("btn");
+  $userInput.appendTo("body");
+  $btn.appendTo("body");
+
+  $(".btn").on("click", function () {
+    var $cityName = $('[name="userinput"]').val();
+    $("body").text($cityName);
+    $.ajax({
+      url:
+        "http://api.openweathermap.org/data/2.5/weather?q=$cityName&units=metric&appid=5e1f33369d4f5b9a96ef79c0e12dc9ea",
+    }).done(function (resp) {
+      var res =
+        resp.name +
+        " temperature today is " +
+        resp.main.temp +
+        " and it feels like " +
+        resp.main.feels_like;
+      console.log(res);
+      $("body").text(res);
+    });
+  });
+
   var registeredUsers = []; // this array stores valid usernames until the next pageload
 
   function validateForm(e) {
@@ -256,7 +284,7 @@
    * Carousel code begins here
    **/
 
-  var sliderEl = $("<section/>")
+  /*var sliderEl = $("<section/>")
     .addClass("lazy slider")
     .attr("data-sizes", "50vw");
 
@@ -293,5 +321,5 @@
       arrow: true,
       dots: true,
     });
-  });
+  });*/
 })(window.jQuery);
