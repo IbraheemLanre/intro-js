@@ -1,5 +1,8 @@
 (function ($) {
-  // Task 2
+  /**
+   * jQuery Ajax  API call  starts here
+   */
+
   $("<h3/>").text("Enter your city name below").appendTo("body");
   var $userInput = $("<Input/>")
     .attr("type", "text")
@@ -25,6 +28,10 @@
       $("body").text(res);
     });
   });
+
+  /**
+   * Form Vdalidation starts here
+   */
 
   var registeredUsers = []; // this array stores valid usernames until the next pageload
 
@@ -283,7 +290,7 @@
    * Carousel code begins here
    **/
 
-  /*var sliderEl = $("<section/>")
+  var sliderEl = $("<section/>")
     .addClass("lazy slider")
     .attr("data-sizes", "50vw");
 
@@ -320,5 +327,5 @@
       arrow: true,
       dots: true,
     });
-  });*/
+  });
 })(window.jQuery);
