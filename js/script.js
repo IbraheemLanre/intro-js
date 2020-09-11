@@ -30,12 +30,12 @@ h2El.innerText = "Use the menu below";
 document.body.appendChild(h2El);
 
 //create menu
-var formEl = document.createElement("form");
-document.body.appendChild(formEl);
+// var formEl = document.createElement("form");
+// document.body.appendChild(formEl);
 
 var clockMenu = document.createElement("select");
 clockMenu.setAttribute("id", "menu");
-formEl.appendChild(clockMenu);
+document.body.appendChild(clockMenu);
 
 var optionEl1 = document.createElement("option");
 optionEl1.textContent = "Select an option";
@@ -64,8 +64,8 @@ hourLabel.setAttribute("for", "inputHour");
 hourLabel.setAttribute("style", "margin-left:10px;");
 hourLabel.innerText = "Hour";
 
-formEl.appendChild(hourLabel);
-formEl.appendChild(inputHour);
+document.body.appendChild(hourLabel);
+document.body.appendChild(inputHour);
 
 var inputMin = document.createElement("input");
 inputMin.setAttribute("name", "inputMinute");
@@ -79,13 +79,13 @@ minuteLabel.setAttribute("for", "inputMinute");
 minuteLabel.setAttribute("style", "margin-left:10px;");
 minuteLabel.innerText = "Minute";
 
-formEl.appendChild(minuteLabel);
-formEl.appendChild(inputMin);
+document.body.appendChild(minuteLabel);
+document.body.appendChild(inputMin);
 
 var btnEl = document.createElement("button");
 btnEl.setAttribute("style", "margin-left:10px;");
 btnEl.innerText = "Submit";
-formEl.appendChild(btnEl);
+document.body.appendChild(btnEl);
 
 //
 
@@ -112,4 +112,3 @@ function playSound() {
   audioEl.appendChild(sourceEl);
   document.body.appendChild(audioEl);
 }
-// if()
